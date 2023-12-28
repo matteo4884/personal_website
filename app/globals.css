@@ -5,6 +5,7 @@
 body {
   background-color: #000000;
   color: #fff;
+  touch-action: pan-x pan-y;
 }
 
 #dot_background {
