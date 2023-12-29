@@ -16,6 +16,7 @@ export default function Main() {
         setIsMobile(false);
       }
     };
+    handleResize();
     const handleMouseMove = (e) => {
       const height = window.innerHeight;
       const width = window.innerWidth;
