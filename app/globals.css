@@ -25,7 +25,7 @@ body {
   height: 100%;
   z-index: -1;
   background: rgb(0, 0, 0);
-  background-position: -7.5px -7.5px;
+  background-position: -8px -18px;
   background-image: radial-gradient(
     circle at 0.5px 0.5px,
     rgb(112, 112, 112) 0.5px,

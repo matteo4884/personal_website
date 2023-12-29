@@ -6,8 +6,16 @@ export default function Main() {
   const [isScrollingY, setIsScrollingY] = useState("false");
   const [isScrollingX, setIsScrollingX] = useState("false");
   const [isMouseOutside, setIsMouseOutside] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < window.innerHeight && window.innerWidth < 640) {
+        setIsMobile(true);
+      } else {
+        setIsMobile(false);
+      }
+    };
     const handleMouseMove = (e) => {
       const height = window.innerHeight;
       const width = window.innerWidth;
@@ -41,6 +49,7 @@ export default function Main() {
       setIsMouseOutside(false);
     };
 
+    document.addEventListener("resize", handleResize);
     document.addEventListener("mousemove", handleMouseMove);
     document
       .querySelector("body")
@@ -50,6 +59,7 @@ export default function Main() {
       .addEventListener("mouseenter", handleMouseEnter);
 
     return () => {
+      document.addEventListener("resize", handleResize);
       document.removeEventListener("mousemove", handleMouseMove);
       document
         .querySelector("body")
@@ -61,15 +71,19 @@ export default function Main() {
   }, []);
 
   useEffect(() => {
+    if (isMobile) {
+      return;
+    }
+
     let scrollInterval;
 
     if (isScrollingY === "goDown") {
       scrollInterval = setInterval(() => {
-        window.scrollBy(0, 3);
+        window.scrollBy(0, 4);
       }, 10);
     } else if (isScrollingY === "goUp") {
       scrollInterval = setInterval(() => {
-        window.scrollBy(0, -3);
+        window.scrollBy(0, -4);
       }, 10);
     } else {
       clearInterval(scrollInterval);
@@ -78,18 +92,22 @@ export default function Main() {
     isMouseOutside && clearInterval(scrollInterval);
 
     return () => clearInterval(scrollInterval);
-  }, [isScrollingY, isMouseOutside]);
+  }, [isScrollingY, isMouseOutside, isMobile]);
 
   useEffect(() => {
+    if (isMobile) {
+      return;
+    }
+
     let scrollInterval;
 
     if (isScrollingX === "goRight") {
       scrollInterval = setInterval(() => {
-        window.scrollBy(3, 0);
+        window.scrollBy(4, 0);
       }, 10);
     } else if (isScrollingX === "goLeft") {
       scrollInterval = setInterval(() => {
-        window.scrollBy(-3, 0);
+        window.scrollBy(-4, 0);
       }, 10);
     } else {
       clearInterval(scrollInterval);
@@ -98,7 +116,7 @@ export default function Main() {
     isMouseOutside && clearInterval(scrollInterval);
 
     return () => clearInterval(scrollInterval);
-  }, [isScrollingX, isMouseOutside]);
+  }, [isScrollingX, isMouseOutside, isMobile]);
 
   return (
     <>
