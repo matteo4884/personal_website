@@ -49,3 +49,15 @@ body {
       center / var(--dot-space) var(--dot-space),
     var(--dot-color); */
 }
+
+.mega-container {
+  display: grid;
+  grid-template-columns: repeat(4, 100vw);
+  grid-template-rows: repeat(4, 100vh);
+}
+
+.section {
+  width: 100vw;
+  height: 100vh;
+  /* Aggiungi ulteriori stili come colore di sfondo, ecc. */
+}

@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import MainContent from "./mainContent";
+import Image from "next/image";
 
 export default function Main() {
   const [isScrollingY, setIsScrollingY] = useState("false");
@@ -23,20 +25,36 @@ export default function Main() {
       const mouseY = e.clientY;
       const mouseX = e.clientX;
       const triggerX = width / 4;
-      const triggerY = height / 4;
+      const triggerY = height / 3;
 
       if (mouseY > height - triggerY) {
-        setIsScrollingY("goDown");
+        if (mouseY - (height - triggerY) > triggerY / 2) {
+          setIsScrollingY("goDownFast");
+        } else {
+          setIsScrollingY("goDownSlow");
+        }
       } else if (mouseY < triggerY) {
-        setIsScrollingY("goUp");
+        if (height - mouseY - (height - triggerY) > triggerY / 2) {
+          setIsScrollingY("goUpFast");
+        } else {
+          setIsScrollingY("goUpSlow");
+        }
       } else {
         setIsScrollingY("false");
       }
 
       if (mouseX > width - triggerX) {
-        setIsScrollingX("goRight");
+        if (mouseX - (width - triggerX) > triggerX / 2) {
+          setIsScrollingX("goRightFast");
+        } else {
+          setIsScrollingX("goRightSlow");
+        }
       } else if (mouseX < triggerX) {
-        setIsScrollingX("goLeft");
+        if (width - mouseX - (width - triggerX) > triggerX / 2) {
+          setIsScrollingX("goLeftFast");
+        } else {
+          setIsScrollingX("goLeftSlow");
+        }
       } else {
         setIsScrollingX("false");
       }
@@ -78,13 +96,21 @@ export default function Main() {
 
     let scrollInterval;
 
-    if (isScrollingY === "goDown") {
+    if (isScrollingY === "goDownFast") {
       scrollInterval = setInterval(() => {
         window.scrollBy(0, 4);
       }, 10);
-    } else if (isScrollingY === "goUp") {
+    } else if (isScrollingY === "goDownSlow") {
+      scrollInterval = setInterval(() => {
+        window.scrollBy(0, 2);
+      }, 10);
+    } else if (isScrollingY === "goUpFast") {
       scrollInterval = setInterval(() => {
         window.scrollBy(0, -4);
+      }, 10);
+    } else if (isScrollingY === "goUpSlow") {
+      scrollInterval = setInterval(() => {
+        window.scrollBy(0, -2);
       }, 10);
     } else {
       clearInterval(scrollInterval);
@@ -102,13 +128,21 @@ export default function Main() {
 
     let scrollInterval;
 
-    if (isScrollingX === "goRight") {
+    if (isScrollingX === "goRightFast") {
       scrollInterval = setInterval(() => {
         window.scrollBy(4, 0);
       }, 10);
-    } else if (isScrollingX === "goLeft") {
+    } else if (isScrollingX === "goRightSlow") {
+      scrollInterval = setInterval(() => {
+        window.scrollBy(2, 0);
+      }, 10);
+    } else if (isScrollingX === "goLeftFast") {
       scrollInterval = setInterval(() => {
         window.scrollBy(-4, 0);
+      }, 10);
+    } else if (isScrollingX === "goLeftSlow") {
+      scrollInterval = setInterval(() => {
+        window.scrollBy(-2, 0);
       }, 10);
     } else {
       clearInterval(scrollInterval);
@@ -121,7 +155,7 @@ export default function Main() {
 
   return (
     <>
-      <div className="w-[5000px] h-[5000px]">test</div>
+      <MainContent />
     </>
   );
 }
