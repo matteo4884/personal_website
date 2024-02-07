@@ -15,6 +15,10 @@ import Section13 from "./sections/section_13";
 import Section14 from "./sections/section_14";
 import Section15 from "./sections/section_15";
 import Section16 from "./sections/section_16";
+import Section17 from "./sections/section_17";
+import Section18 from "./sections/section_18";
+import Section19 from "./sections/section_19";
+import Section20 from "./sections/section_20";
 
 export default function MainContent() {
   return (
@@ -70,6 +74,18 @@ export default function MainContent() {
         <div className="section">
           <Section12 />
         </div>
+        <div className="section">
+          <Section13 />
+        </div>
+        <div className="section">
+          <Section14 />
+        </div>
+        <div className="section">
+          <Section15 />
+        </div>
+        <div className="section">
+          <Section16 />
+        </div>
         <div className="section relative">
           <Image
             src="/down-left.svg"
@@ -78,13 +94,13 @@ export default function MainContent() {
             height={500}
             className="absolute bottom-[-10px] left-[-10px] w-[50%] h-[auto] opacity-[0.1]"
           />
-          <Section13 />
+          <Section17 />
         </div>
         <div className="section">
-          <Section14 />
+          <Section18 />
         </div>
         <div className="section">
-          <Section15 />
+          <Section19 />
         </div>
         <div className="section relative">
           <Image
@@ -94,7 +110,7 @@ export default function MainContent() {
             height={500}
             className="absolute bottom-[-10px] right-[-10px] w-[50%] h-[auto] opacity-[0.1]"
           />
-          <Section16 />
+          <Section20 />
         </div>
       </div>
     </>

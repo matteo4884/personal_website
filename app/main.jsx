@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import MainContent from "./mainContent";
-import Image from "next/image";
+import { IoIosHelpCircle } from "react-icons/io";
 
 export default function Main() {
   const [isScrollingY, setIsScrollingY] = useState("false");
@@ -156,6 +156,63 @@ export default function Main() {
   return (
     <>
       <MainContent />
+      <BlurredBackground />
+      <Guide />
     </>
+  );
+}
+
+export function BlurredBackground() {
+  return (
+    <>
+      <div
+        id="right_blur"
+        className="fixed right-0 top-0 h-screen w-[50px] bg-[#000000]"
+      ></div>
+      <div
+        id="left_blur"
+        className="fixed left-0 top-0 h-screen w-[50px] bg-[#000000]"
+      ></div>
+      <div
+        id="top_blur"
+        className="fixed top-0 h-[50px] w-screen bg-[#000000]"
+      ></div>
+      <div
+        id="bottom_blur"
+        className="fixed bottom-0 h-[50px] w-screen bg-[#000000]"
+      ></div>
+    </>
+  );
+}
+
+export function Guide() {
+  return (
+    <div
+      className="fixed p-2 backdrop-blur-[3px] bg-[#86868640] rounded-[5px]"
+      style={{
+        bottom: "clamp(10px, 1.042vw, 20px)",
+        left: "clamp(10px, 1.042vw, 20px)",
+      }}
+    >
+      <div className="flex justify-startitems-end">
+        <IoIosHelpCircle size={25} />
+        <div className="pl-2">
+          <span
+            className="font-bold"
+            style={{ fontSize: "clamp(14px, 0.938vw, 18px)" }}
+          >
+            For stupids
+          </span>
+          <p
+            className="font-thin"
+            style={{ fontSize: "clamp(12px, 0.729vw, 14px)" }}
+          >
+            Move the mouse to the edges to
+            <br />
+            scroll in the desired direction.
+          </p>
+        </div>
+      </div>
+    </div>
   );
 }

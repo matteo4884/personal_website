@@ -1,8 +1,14 @@
-import { Inter } from "next/font/google";
+import { Bebas_Neue, Red_Hat_Display } from "next/font/google";
 import Head from "next/head";
+import Header from "./header";
+import Footer from "./footer";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const bebasNeue = Bebas_Neue({ subsets: ["latin"], weight: "400" });
+const redHatDisplay = Red_Hat_Display({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+});
 
 export const metadata = {
   title: "Matteo Beu | Personal Website",
@@ -18,7 +24,11 @@ export default function RootLayout({ children }) {
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
         />
       </Head>
-      <body className={inter.className}>{children}</body>
+      <body className={redHatDisplay.className}>
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
