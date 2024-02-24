@@ -21,7 +21,7 @@ export default function Home() {
 </pre>
         <div><span className="font-semibold leading-none">website@matteobeu:&nbsp;</span><span className="leading-none">Webite under code-construction. Launch sequence soon!</span><span id="riga_anim" className="align-middle inline-block h-[12px] w-[5px] bg-[#fff]"></span></div>
                                                               
-            <div className="fixed bottom-[10px]"><a href="https://github.com/matteo4884" target="_blank">github</a> | <a href="https://www.instagram.com/matteo_beu/">instagram</a> | <a href="https://www.linkedin.com/in/matteo-beu-73b379238?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">linkedin</a></div>                                                  
+            <div className="absolute bottom-[10px]"><a href="https://github.com/matteo4884" target="_blank">github</a> | <a href="https://www.instagram.com/matteo_beu/">instagram</a> | <a href="https://www.linkedin.com/in/matteo-beu-73b379238?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">linkedin</a></div>                                                  
 
 
       </div>
