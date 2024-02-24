@@ -100,3 +100,19 @@ html {
   height: 100%;
   /* Aggiungi ulteriori stili come colore di sfondo, ecc. */
 }
+
+
+
+
+
+#riga_anim {
+  animation: tictoc 1s infinite;
+  animation-timing-function: steps(2, jump-none);
+}
+@keyframes tictoc {
+  from{
+    opacity: 0;
+  } to {
+    opacity: 1;
+  }
+}

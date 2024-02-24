@@ -1,4 +1,4 @@
-import { Bebas_Neue, Red_Hat_Display } from "next/font/google";
+import { Bebas_Neue, Red_Hat_Display, Courier_Prime } from "next/font/google";
 import Head from "next/head";
 import Header from "./header";
 import Footer from "./footer";
@@ -9,6 +9,8 @@ const redHatDisplay = Red_Hat_Display({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800", "900"],
 });
+const courierPrime = Courier_Prime({subsets: ["latin"], weight: ["400", "700"]})
+
 
 export const metadata = {
   title: "Matteo Beu | Personal Website",
@@ -24,10 +26,10 @@ export default function RootLayout({ children }) {
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
         />
       </Head>
-      <body className={redHatDisplay.className}>
-        <Header />
+      <body className={courierPrime.className}>
+        {/* <Header /> */}
         {children}
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );
