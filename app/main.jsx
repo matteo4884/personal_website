@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import MainContent from "./mainContent";
 import { IoIosHelpCircle } from "react-icons/io";
 
@@ -9,6 +9,7 @@ export default function Main() {
   const [isScrollingX, setIsScrollingX] = useState("false");
   const [isMouseOutside, setIsMouseOutside] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [isStopped, setIsStopped] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -90,7 +91,7 @@ export default function Main() {
   }, []);
 
   useEffect(() => {
-    if (isMobile) {
+    if (isMobile || isStopped) {
       return;
     }
 
@@ -119,10 +120,10 @@ export default function Main() {
     isMouseOutside && clearInterval(scrollInterval);
 
     return () => clearInterval(scrollInterval);
-  }, [isScrollingY, isMouseOutside, isMobile]);
+  }, [isScrollingY, isMouseOutside, isMobile, isStopped]);
 
   useEffect(() => {
-    if (isMobile) {
+    if (isMobile || isStopped) {
       return;
     }
 
@@ -151,13 +152,13 @@ export default function Main() {
     isMouseOutside && clearInterval(scrollInterval);
 
     return () => clearInterval(scrollInterval);
-  }, [isScrollingX, isMouseOutside, isMobile]);
+  }, [isScrollingX, isMouseOutside, isMobile, isStopped]);
 
   return (
     <>
-      <MainContent />
+      <MainContent setIsStopped={setIsStopped} />
       <BlurredBackground />
-      <Guide />
+      <Guide setIsStopped={setIsStopped} />
     </>
   );
 }
@@ -167,42 +168,49 @@ export function BlurredBackground() {
     <>
       <div
         id="right_blur"
-        className="fixed right-0 top-0 h-screen w-[50px] bg-[#000000]"
+        className="fixed -right-[60px] top-0 h-screen w-[100px] bg-[#000000] blur-[20px]"
       ></div>
       <div
         id="left_blur"
-        className="fixed left-0 top-0 h-screen w-[50px] bg-[#000000]"
+        className="fixed -left-[60px] top-0 h-screen w-[100px] bg-[#000000] blur-[20px]"
       ></div>
       <div
         id="top_blur"
-        className="fixed top-0 h-[50px] w-screen bg-[#000000]"
+        className="fixed -top-[60px] h-[100px] w-screen bg-[#000000] blur-[20px]"
       ></div>
       <div
         id="bottom_blur"
-        className="fixed bottom-0 h-[50px] w-screen bg-[#000000]"
+        className="fixed -bottom-[60px] h-[100px] w-screen bg-[#000000] blur-[20px]"
       ></div>
     </>
   );
 }
 
-export function Guide() {
+export function Guide({ setIsStopped }) {
+  const guide = useRef();
+  const [isHover, setIsHover] = useState(false);
   return (
     <div
-      className="fixed p-2 backdrop-blur-[3px] bg-[#86868640] rounded-[5px]"
+      className={`fixed p-2 backdrop-blur-[3px] bg-[#86868640] transition ${
+        isHover ? "rounded-[5px]" : "rounded-full"
+      } `}
       style={{
         bottom: "clamp(10px, 1.042vw, 20px)",
         left: "clamp(10px, 1.042vw, 20px)",
       }}
+      ref={guide}
+      onMouseOver={() => (setIsHover(true), setIsStopped(true))}
+      onMouseLeave={() => (setIsHover(false), setIsStopped(false))}
     >
       <div className="flex justify-startitems-end">
         <IoIosHelpCircle size={25} />
-        <div className="pl-2">
-          <span
+        <div className={`pl-2  ${isHover ? "block" : "hidden"}`}>
+          {/* <span
             className="font-bold"
             style={{ fontSize: "clamp(14px, 0.938vw, 18px)" }}
           >
             For stupids
-          </span>
+          </span> */}
           <p
             className="font-thin"
             style={{ fontSize: "clamp(12px, 0.729vw, 14px)" }}

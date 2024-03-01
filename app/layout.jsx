@@ -9,8 +9,10 @@ const redHatDisplay = Red_Hat_Display({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800", "900"],
 });
-const courierPrime = Courier_Prime({subsets: ["latin"], weight: ["400", "700"]})
-
+const courierPrime = Courier_Prime({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+});
 
 export const metadata = {
   title: "Matteo Beu | Personal Website",
@@ -27,9 +29,9 @@ export default function RootLayout({ children }) {
         />
       </Head>
       <body className={courierPrime.className}>
-        {/* <Header /> */}
+        <Header />
         {children}
-        {/* <Footer /> */}
+        <Footer />
       </body>
     </html>
   );
