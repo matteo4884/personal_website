@@ -1,7 +1,7 @@
 export default function Section16() {
   return (
     <>
-      <h1>ciao</h1>
+      <h1 className="single_section">16</h1>
     </>
   );
 }

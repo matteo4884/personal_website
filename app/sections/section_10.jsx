@@ -16,7 +16,7 @@ export default function Section10() {
     <>
       <div
         ref={el}
-        className="w-screen h-screen flex justify-center items-center"
+        className="w-screen h-screen flex justify-center items-center single_section"
       >
         <div className="relative">
           <motion.div
@@ -37,9 +37,14 @@ export default function Section10() {
             ></Image>
           </motion.div>
           <h1
-            className={`${bebasNeue.className} absolute -bottom-[10%] w-max --font-xxl z-10 scale-125`}
+            className={`${bebasNeue.className} absolute -top-[10%] left-0 right-0 w-max --font-xxl z-10`}
           >
-            Hi! I am a Developer
+            Hello!
+          </h1>
+          <h1
+            className={`${bebasNeue.className} absolute -bottom-[10%] w-max --font-xxl z-10`}
+          >
+            I am a Developer
           </h1>
         </div>
       </div>

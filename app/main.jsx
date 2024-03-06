@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import MainContent from "./mainContent";
 import { IoIosHelpCircle } from "react-icons/io";
+import { HiInformationCircle } from "react-icons/hi";
 
 export default function Main() {
   const [isScrollingY, setIsScrollingY] = useState("false");
@@ -159,6 +160,7 @@ export default function Main() {
       <MainContent setIsStopped={setIsStopped} />
       <BlurredBackground />
       <Guide setIsStopped={setIsStopped} />
+      <Informations setIsStopped={setIsStopped} />
     </>
   );
 }
@@ -168,19 +170,19 @@ export function BlurredBackground() {
     <>
       <div
         id="right_blur"
-        className="fixed -right-[60px] top-0 h-screen w-[100px] bg-[#000000] blur-[20px]"
+        className="fixed -right-[60px] top-0 h-screen w-[100px] bg-[#000000] blur-[20px] z-[100] pointer-events-none"
       ></div>
       <div
         id="left_blur"
-        className="fixed -left-[60px] top-0 h-screen w-[100px] bg-[#000000] blur-[20px]"
+        className="fixed -left-[60px] top-0 h-screen w-[100px] bg-[#000000] blur-[20px] z-[100] pointer-events-none"
       ></div>
       <div
         id="top_blur"
-        className="fixed -top-[60px] h-[100px] w-screen bg-[#000000] blur-[20px]"
+        className="fixed -top-[60px] h-[100px] w-screen bg-[#000000] blur-[20px] z-[100] pointer-events-none"
       ></div>
       <div
         id="bottom_blur"
-        className="fixed -bottom-[60px] h-[100px] w-screen bg-[#000000] blur-[20px]"
+        className="fixed -bottom-[60px] h-[100px] w-screen bg-[#000000] blur-[20px] z-[100] pointer-events-none"
       ></div>
     </>
   );
@@ -191,7 +193,7 @@ export function Guide({ setIsStopped }) {
   const [isHover, setIsHover] = useState(false);
   return (
     <div
-      className={`fixed p-2 backdrop-blur-[3px] bg-[#86868640] transition ${
+      className={`fixed p-2 backdrop-blur-[3px] bg-[#86868640] z-[101] transition ${
         isHover ? "rounded-[5px]" : "rounded-full"
       } `}
       style={{
@@ -202,7 +204,7 @@ export function Guide({ setIsStopped }) {
       onMouseOver={() => (setIsHover(true), setIsStopped(true))}
       onMouseLeave={() => (setIsHover(false), setIsStopped(false))}
     >
-      <div className="flex justify-startitems-end">
+      <div className="flex justify-start items-end">
         <IoIosHelpCircle size={25} />
         <div className={`pl-2  ${isHover ? "block" : "hidden"}`}>
           {/* <span
@@ -218,6 +220,45 @@ export function Guide({ setIsStopped }) {
             Move the mouse to the edges to
             <br />
             scroll in the desired direction.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function Informations({ setIsStopped }) {
+  const guide = useRef();
+  const [isHover, setIsHover] = useState(false);
+  return (
+    <div
+      className={`fixed p-2 backdrop-blur-[3px] bg-[#86868640] z-[101] transition ${
+        isHover ? "rounded-[5px]" : "rounded-full"
+      } `}
+      style={{
+        bottom: "clamp(10px, 1.042vw, 20px)",
+        right: "clamp(10px, 1.042vw, 20px)",
+      }}
+      ref={guide}
+      onMouseOver={() => (setIsHover(true), setIsStopped(true))}
+      onMouseLeave={() => (setIsHover(false), setIsStopped(false))}
+    >
+      <div className="flex flex-row-reverse justify-start items-end">
+        <HiInformationCircle size={25} />
+        <div className={`pr-2  ${isHover ? "block" : "hidden"}`}>
+          {/* <span
+            className="font-bold"
+            style={{ fontSize: "clamp(14px, 0.938vw, 18px)" }}
+          >
+            For stupids
+          </span> */}
+          <p
+            className="font-thin"
+            style={{ fontSize: "clamp(12px, 0.729vw, 14px)" }}
+          >
+            © {new Date().getFullYear()} matteobeu
+            <br />
+            All rights reserved
           </p>
         </div>
       </div>

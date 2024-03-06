@@ -1,7 +1,7 @@
 export default function Section1() {
   return (
     <>
-      <div>ciao</div>
+      <h1 className="single_section">1</h1>
     </>
   );
 }
