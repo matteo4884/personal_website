@@ -6,6 +6,9 @@ export default function Section20() {
         <a className="--font-xxl mt-[20px]" href="mailto:matteobeu@gmail.com">
           matteobeu@gmail.com
         </a>
+        <a className="--font-xxl mt-[20px]" href="tel:+393317037949">
+          +39 3317037949
+        </a>
       </div>
     </>
   );

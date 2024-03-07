@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import MainContent from "./mainContent";
 import { IoIosHelpCircle } from "react-icons/io";
 import { HiInformationCircle } from "react-icons/hi";
+import Header from "./header";
 
 export default function Main() {
   const [isScrollingY, setIsScrollingY] = useState("false");
@@ -157,6 +158,7 @@ export default function Main() {
 
   return (
     <>
+      <Header setIsStopped={setIsStopped} />
       <MainContent setIsStopped={setIsStopped} />
       <BlurredBackground />
       <Guide setIsStopped={setIsStopped} />
@@ -193,18 +195,16 @@ export function Guide({ setIsStopped }) {
   const [isHover, setIsHover] = useState(false);
   return (
     <div
-      className={`fixed p-2 backdrop-blur-[3px] bg-[#86868640] z-[101] transition ${
-        isHover ? "rounded-[5px]" : "rounded-full"
-      } `}
+      className={`fixed p-2 backdrop-blur-[3px] bg-[#86868640] z-[101] transition rounded-[10px]`}
       style={{
-        bottom: "clamp(10px, 1.042vw, 20px)",
+        bottom: "clamp(20px, 1.563vw, 30px)",
         left: "clamp(10px, 1.042vw, 20px)",
       }}
       ref={guide}
       onMouseOver={() => (setIsHover(true), setIsStopped(true))}
       onMouseLeave={() => (setIsHover(false), setIsStopped(false))}
     >
-      <div className="flex justify-start items-end">
+      <div className="flex justify-start items-end --font-m">
         <IoIosHelpCircle size={25} />
         <div className={`pl-2  ${isHover ? "block" : "hidden"}`}>
           {/* <span
@@ -213,10 +213,7 @@ export function Guide({ setIsStopped }) {
           >
             For stupids
           </span> */}
-          <p
-            className="font-thin"
-            style={{ fontSize: "clamp(12px, 0.729vw, 14px)" }}
-          >
+          <p className="font-thin">
             Move the mouse to the edges to
             <br />
             scroll in the desired direction.
@@ -232,11 +229,9 @@ export function Informations({ setIsStopped }) {
   const [isHover, setIsHover] = useState(false);
   return (
     <div
-      className={`fixed p-2 backdrop-blur-[3px] bg-[#86868640] z-[101] transition ${
-        isHover ? "rounded-[5px]" : "rounded-full"
-      } `}
+      className={`fixed p-2 backdrop-blur-[3px] bg-[#86868640] z-[101] transition rounded-[10px]`}
       style={{
-        bottom: "clamp(10px, 1.042vw, 20px)",
+        bottom: "clamp(20px, 1.563vw, 30px)",
         right: "clamp(10px, 1.042vw, 20px)",
       }}
       ref={guide}
@@ -246,16 +241,7 @@ export function Informations({ setIsStopped }) {
       <div className="flex flex-row-reverse justify-start items-end">
         <HiInformationCircle size={25} />
         <div className={`pr-2  ${isHover ? "block" : "hidden"}`}>
-          {/* <span
-            className="font-bold"
-            style={{ fontSize: "clamp(14px, 0.938vw, 18px)" }}
-          >
-            For stupids
-          </span> */}
-          <p
-            className="font-thin"
-            style={{ fontSize: "clamp(12px, 0.729vw, 14px)" }}
-          >
+          <p className="font-thin --font-m">
             © {new Date().getFullYear()} matteobeu
             <br />
             All rights reserved
