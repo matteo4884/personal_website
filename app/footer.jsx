@@ -25,10 +25,10 @@ export default function Footer() {
       }
     });
 
-    return (
-      () => window.removeEventListener("resize", getWidth),
-      window.removeEventListener("resize", handleWindowWidth)
-    );
+    return () => {
+      window.removeEventListener("resize", getWidth);
+      window.removeEventListener("resize", handleWindowWidth);
+    };
   }, [windowWidth, width]);
   return (
     <div key={key}>

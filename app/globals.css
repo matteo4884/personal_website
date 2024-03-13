@@ -31,18 +31,32 @@ html {
 
 .--font-s {
   font-size: var(--font-s);
+  line-height: 1.2;
 }
 .--font-m {
   font-size: var(--font-m);
+  line-height: 1.2;
 }
 .--font-l {
   font-size: var(--font-l);
+  line-height: 1.2;
 }
 .--font-xl {
   font-size: var(--font-xl);
+  line-height: 1.2;
 }
 .--font-xxl {
   font-size: var(--font-xxl);
+  line-height: 1.2;
+}
+
+img {
+  user-drag: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 #dot_background {
@@ -89,7 +103,7 @@ html {
 @media (max-width: 1024px) {
   .mega-container {
     grid-template-columns: repeat(4, 200vw);
-    grid-template-rows: repeat(5, 200vh);
+    grid-template-rows: repeat(5, 100vh);
   }
 }
 
@@ -99,7 +113,7 @@ html {
   /* Aggiungi ulteriori stili come colore di sfondo, ecc. */
 }
 
-#riga_anim {
+/* #riga_anim {
   animation: tictoc 1s infinite;
   animation-timing-function: steps(2, jump-none);
 }
@@ -110,4 +124,4 @@ html {
   to {
     opacity: 1;
   }
-}
+} */

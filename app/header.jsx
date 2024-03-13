@@ -23,7 +23,7 @@ export function Menu({ setIsStopped }) {
   const [isHover, setIsHover] = useState(false);
   return (
     <div
-      className={`p-2 backdrop-blur-[3px] bg-[#86868640] z-[101] transition rounded-[10px]`}
+      className={`p-2 supported-backdrop-filter bg-[#86868640] z-[101] transition rounded-[10px] h-max`}
       ref={menu}
       onMouseOver={() => (setIsHover(true), setIsStopped(true))}
       onMouseLeave={() => (setIsHover(false), setIsStopped(false))}
@@ -34,13 +34,36 @@ export function Menu({ setIsStopped }) {
           <div className="font-thin">
             <ul>
               <li className="line-through cursor-pointer hover:no-underline">
-                Presentation
+                <a
+                  onClick={() =>
+                    document.getElementById("presentation").scrollIntoView({
+                      behavior: "smooth",
+                      block: "center",
+                      inline: "center",
+                    })
+                  }
+                >
+                  Presentation
+                </a>
               </li>
               <li className="line-through cursor-pointer hover:no-underline">
-                About
+                <a href="">About</a>
               </li>
               <li className="line-through cursor-pointer hover:no-underline">
-                Portfolio
+                <a href="">Portfolio</a>
+              </li>
+              <li className="line-through cursor-pointer hover:no-underline">
+                <a
+                  onClick={() =>
+                    document.getElementById("contacts").scrollIntoView({
+                      behavior: "smooth",
+                      block: "center",
+                      inline: "center",
+                    })
+                  }
+                >
+                  Contacts
+                </a>
               </li>
             </ul>
           </div>

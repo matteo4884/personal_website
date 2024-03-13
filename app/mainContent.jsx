@@ -31,7 +31,6 @@ export default function MainContent() {
       e.preventDefault();
     });
   }, []);
-
   return (
     <>
       <div className="mega-container" ref={main}>

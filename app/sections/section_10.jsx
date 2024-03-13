@@ -10,13 +10,18 @@ const bebasNeue = Bebas_Neue({ subsets: ["latin"], weight: "400" });
 export default function Section10() {
   const el = useRef();
   useEffect(() => {
-    el.current.scrollIntoView();
+    el.current.scrollIntoView({
+      behavior: "instant",
+      block: "center",
+      inline: "center",
+    });
   }, []);
   return (
     <>
       <div
         ref={el}
-        className="w-screen h-screen flex justify-center items-center single_section"
+        className="w-full h-full flex justify-center items-center single_section relative"
+        id="presentation"
       >
         <div className="relative">
           <motion.div
@@ -46,6 +51,9 @@ export default function Section10() {
           >
             I am a Developer
           </h1>
+        </div>
+        <div className="absolute top-[5%] left-[5%]">
+          <Image src={"/star_icon.svg"} width={100} height={100} alt="star" />
         </div>
       </div>
     </>

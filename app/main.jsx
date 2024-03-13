@@ -5,6 +5,9 @@ import MainContent from "./mainContent";
 import { IoIosHelpCircle } from "react-icons/io";
 import { HiInformationCircle } from "react-icons/hi";
 import Header from "./header";
+import { FaGithub, FaInstagram } from "react-icons/fa";
+import { AiFillInstagram } from "react-icons/ai";
+import { FaLinkedin } from "react-icons/fa";
 
 export default function Main() {
   const [isScrollingY, setIsScrollingY] = useState("false");
@@ -163,6 +166,7 @@ export default function Main() {
       <BlurredBackground />
       <Guide setIsStopped={setIsStopped} />
       <Informations setIsStopped={setIsStopped} />
+      <Socials setIsStopped={setIsStopped} />
     </>
   );
 }
@@ -195,7 +199,7 @@ export function Guide({ setIsStopped }) {
   const [isHover, setIsHover] = useState(false);
   return (
     <div
-      className={`fixed p-2 backdrop-blur-[3px] bg-[#86868640] z-[101] transition rounded-[10px]`}
+      className={`fixed p-2 supported-backdrop-filter bg-[#86868640] z-[101] transition rounded-[10px]`}
       style={{
         bottom: "clamp(20px, 1.563vw, 30px)",
         left: "clamp(10px, 1.042vw, 20px)",
@@ -207,13 +211,10 @@ export function Guide({ setIsStopped }) {
       <div className="flex justify-start items-end --font-m">
         <IoIosHelpCircle size={25} />
         <div className={`pl-2  ${isHover ? "block" : "hidden"}`}>
-          {/* <span
-            className="font-bold"
-            style={{ fontSize: "clamp(14px, 0.938vw, 18px)" }}
-          >
-            For stupids
-          </span> */}
-          <p className="font-thin">
+          <div className="font-bold uppercase --font-m mb-[5px]">
+            For dumbies
+          </div>
+          <p className="font-thin --font-s">
             Move the mouse to the edges to
             <br />
             scroll in the desired direction.
@@ -229,7 +230,7 @@ export function Informations({ setIsStopped }) {
   const [isHover, setIsHover] = useState(false);
   return (
     <div
-      className={`fixed p-2 backdrop-blur-[3px] bg-[#86868640] z-[101] transition rounded-[10px]`}
+      className={`fixed p-2 supported-backdrop-filter bg-[#86868640] z-[101] transition rounded-[10px]`}
       style={{
         bottom: "clamp(20px, 1.563vw, 30px)",
         right: "clamp(10px, 1.042vw, 20px)",
@@ -242,11 +243,57 @@ export function Informations({ setIsStopped }) {
         <HiInformationCircle size={25} />
         <div className={`pr-2  ${isHover ? "block" : "hidden"}`}>
           <p className="font-thin --font-m">
-            © {new Date().getFullYear()} matteobeu
+            This website uses no cookies
             <br />
-            All rights reserved
+            and collects no data.
+            <br />
+            You can&#39;t sue me :&#41;
+            <br />
+            <br />© {new Date().getFullYear()} matteobeu
+            <br />
+            All rights reserved.
+            <br />
           </p>
         </div>
+      </div>
+    </div>
+  );
+}
+
+export function Socials({ setIsStopped }) {
+  return (
+    <div
+      className="fixed supported-backdrop-filter z-[101] p-2 bg-[#86868640] rounded-[10px]"
+      style={{
+        top: "clamp(10px, 1.042vw, 20px)",
+        right: "clamp(10px, 1.042vw, 20px)",
+      }}
+      onMouseOver={() => setIsStopped(true)}
+      onMouseLeave={() => setIsStopped(false)}
+    >
+      <div>
+        <a href="https://www.instagram.com/matteo_beu/" target="_blank">
+          <AiFillInstagram
+            size={20}
+            className="hover:rotate-[20deg] transition-all"
+          />
+        </a>
+      </div>
+      <div className="my-[10px]">
+        <a
+          href="https://www.linkedin.com/in/matteo-beu-73b379238"
+          target="_blank"
+        >
+          <FaLinkedin
+            size={20}
+            className="hover:rotate-[20deg] transition-all"
+          />
+        </a>
+      </div>
+      <div>
+        <a href="https://github.com/matteo4884" target="_blank">
+          <FaGithub size={20} className="hover:rotate-[20deg] transition-all" />
+        </a>
       </div>
     </div>
   );

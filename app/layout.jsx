@@ -2,6 +2,7 @@ import { Bebas_Neue, Red_Hat_Display, Courier_Prime } from "next/font/google";
 import Head from "next/head";
 import Footer from "./footer";
 import "./globals.css";
+import Cursor from "./components/cursor_cerchio";
 
 const bebasNeue = Bebas_Neue({ subsets: ["latin"], weight: "400" });
 const redHatDisplay = Red_Hat_Display({
@@ -28,6 +29,7 @@ export default function RootLayout({ children }) {
         />
       </Head>
       <body className={courierPrime.className}>
+        <Cursor />
         {children}
         <Footer />
       </body>
