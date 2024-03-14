@@ -47,7 +47,17 @@ export function Menu({ setIsStopped }) {
                 </a>
               </li>
               <li className="line-through cursor-pointer hover:no-underline">
-                <a href="">About</a>
+                <a
+                  onClick={() =>
+                    document.getElementById("about").scrollIntoView({
+                      behavior: "smooth",
+                      block: "center",
+                      inline: "center",
+                    })
+                  }
+                >
+                  About
+                </a>
               </li>
               <li className="line-through cursor-pointer hover:no-underline">
                 <a href="">Portfolio</a>
