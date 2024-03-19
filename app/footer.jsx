@@ -34,7 +34,7 @@ export default function Footer() {
     <div key={key}>
       <motion.div
         animate={{ x: -width }}
-        transition={{ repeat: Infinity, duration: 30, ease: "linear" }}
+        transition={{ repeat: Infinity, duration: 120, ease: "linear" }}
         className="fixed flex w-max --font-s bottom-0 uppercase z-[101] pointer-events-none"
       >
         <div id="primo">
@@ -43,7 +43,12 @@ export default function Footer() {
           Life&apos;s good My adventure Love yourself Life&apos;s good My
           adventure Love yourself Life&apos;s good My adventure Love yourself
           Life&apos;s good My adventure My adventure Love yourself Life&apos;s
-          good My adventure&nbsp;
+          good My adventure&nbsp; Life&apos;s good My adventure Love yourself
+          Life&apos;s good My adventure Love yourself Life&apos;s good My
+          adventure Love yourself Life&apos;s good My adventure Love yourself
+          Life&apos;s good My adventure Love yourself Life&apos;s good My
+          adventure Love yourself Life&apos;s good My adventure My adventure
+          Love yourself Life&apos;s good My adventure&nbsp;
         </div>
         <div id="secondo">
           Life&apos;s good My adventure Love yourself Life&apos;s good My
@@ -51,7 +56,12 @@ export default function Footer() {
           Life&apos;s good My adventure Love yourself Life&apos;s good My
           adventure Love yourself Life&apos;s good My adventure Love yourself
           Life&apos;s good My adventure My adventure Love yourself Life&apos;s
-          good My adventure&nbsp;
+          good My adventure&nbsp; Life&apos;s good My adventure Love yourself
+          Life&apos;s good My adventure Love yourself Life&apos;s good My
+          adventure Love yourself Life&apos;s good My adventure Love yourself
+          Life&apos;s good My adventure Love yourself Life&apos;s good My
+          adventure Love yourself Life&apos;s good My adventure My adventure
+          Love yourself Life&apos;s good My adventure&nbsp;
         </div>
       </motion.div>
     </div>

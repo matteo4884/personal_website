@@ -24,7 +24,7 @@ import Section18 from "./sections/section_18";
 import Section19 from "./sections/section_19";
 import Section20 from "./sections/section_20";
 
-export default function MainContent() {
+export default function MainContent({ setIsStopped }) {
   const main = useRef();
   useEffect(() => {
     main.current.addEventListener("wheel", (e) => {
@@ -49,7 +49,7 @@ export default function MainContent() {
           <Section4 />
         </div>
         <div className="section">
-          <Section5 />
+          <Section5 setIsStopped={setIsStopped} />
         </div>
         <div className="section">
           <Section6 />

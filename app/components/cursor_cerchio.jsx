@@ -48,6 +48,15 @@ export default function Cursor() {
         setIsHover(false);
       });
     });
+    const customLinks = document.querySelectorAll(".mouse-hover");
+    customLinks.forEach((link) => {
+      link.addEventListener("mouseenter", function () {
+        setIsHover(true);
+      });
+      link.addEventListener("mouseleave", function () {
+        setIsHover(false);
+      });
+    });
     return () => {
       document.removeEventListener("mousemove", setFromEvent);
       window.removeEventListener("resize", handleResize);
@@ -61,7 +70,7 @@ export default function Cursor() {
         scale: `${isHover ? "2" : ""}`,
         backgroundColor: `${isHover ? "#D1251F68" : ""}`,
       }}
-      className={`fixed w-[30px] h-[30px] -top-[10px] -left-[15px] transition-[scale,background-color] rounded-full bg-white z-[102] mix-blend-difference pointer-events-none ${
+      className={`fixed w-[30px] h-[30px] -top-[10px] -left-[15px] transition-[scale,background-color] rounded-full bg-white z-[103] mix-blend-difference pointer-events-none ${
         isOut ? "opacity-[0]" : "opacity-[1]"
       } ${isHidden ? "hidden" : ""}`}
       id="cursor"

@@ -15,6 +15,7 @@ export default function Main() {
   const [isMouseOutside, setIsMouseOutside] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [isStopped, setIsStopped] = useState(false);
+  const [rightClick, setRightClick] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -96,7 +97,18 @@ export default function Main() {
   }, []);
 
   useEffect(() => {
-    if (isMobile || isStopped) {
+    document.addEventListener("contextmenu", rightClickFunction);
+    function rightClickFunction(e) {
+      e.preventDefault();
+      setRightClick(!rightClick);
+    }
+    return () => {
+      document.removeEventListener("contextmenu", rightClickFunction);
+    };
+  }, [rightClick]);
+
+  useEffect(() => {
+    if (isMobile || isStopped || rightClick) {
       return;
     }
 
@@ -125,10 +137,10 @@ export default function Main() {
     isMouseOutside && clearInterval(scrollInterval);
 
     return () => clearInterval(scrollInterval);
-  }, [isScrollingY, isMouseOutside, isMobile, isStopped]);
+  }, [isScrollingY, isMouseOutside, isMobile, isStopped, rightClick]);
 
   useEffect(() => {
-    if (isMobile || isStopped) {
+    if (isMobile || isStopped || rightClick) {
       return;
     }
 
@@ -157,7 +169,7 @@ export default function Main() {
     isMouseOutside && clearInterval(scrollInterval);
 
     return () => clearInterval(scrollInterval);
-  }, [isScrollingX, isMouseOutside, isMobile, isStopped]);
+  }, [isScrollingX, isMouseOutside, isMobile, isStopped, rightClick]);
 
   return (
     <>
@@ -215,9 +227,15 @@ export function Guide({ setIsStopped }) {
             For dumbies
           </div>
           <p className="font-thin --font-s">
+            <br />
             Move the mouse to the edges to
             <br />
             scroll in the desired direction.
+            <br />
+            <br />
+            Right mouse click disable and
+            <br />
+            activate movement.
           </p>
         </div>
       </div>

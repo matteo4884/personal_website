@@ -111,6 +111,10 @@ img {
   }
 }
 
+.mouse-hover {
+  cursor: pointer;
+}
+
 .section {
   width: 100%;
   height: 100%;

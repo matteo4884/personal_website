@@ -1,0 +1,98 @@
+export const ABOUT = [
+  {
+    id: 1,
+    name: "Who am I?",
+    image: "/about/about_whoami.webp",
+    text: "ciaooo",
+  },
+  {
+    id: 2,
+    name: "Work",
+    image: "/about/about_work.webp",
+    text: "ciaooofdsafasfdasdfdfs",
+  },
+  {
+    id: 3,
+    name: "Work",
+    image: "/about/about_work.webp",
+    text: "ciaooofasdfasdf",
+  },
+  {
+    id: 4,
+    name: "Work",
+    image: "/about/about_work.webp",
+    text: "ciaoooasdfsadfasdfasdf",
+  },
+  {
+    id: 5,
+    name: "Work",
+    image: "/about/about_work.webp",
+    text: "ciaooofadsfasdfasdfasdf",
+  },
+  {
+    id: 6,
+    name: "Work",
+    image: "/about/about_work.webp",
+    text: "ciaooo fsdasdfasdfsadf",
+  },
+  {
+    id: 7,
+    name: "Work",
+    image: "/about/about_work.webp",
+    text: "ciaooo dsfsdfasdfasdfasd",
+  },
+  {
+    id: 8,
+    name: "Work",
+    image: "/about/about_work.webp",
+    text: "ciaooo asdf sdfasdfsad",
+  },
+  {
+    id: 9,
+    name: "Work",
+    image: "/about/about_work.webp",
+    text: "ciaooo dsfsdaf sadf",
+  },
+  {
+    id: 10,
+    name: "Work",
+    image: "/about/about_work.webp",
+    text: "ciaooo dsf sad asd fsad ",
+  },
+  {
+    id: 11,
+    name: "Work",
+    image: "/about/about_work.webp",
+    text: "ciaooo sad sad f s  dsfas ",
+  },
+  {
+    id: 12,
+    name: "Work",
+    image: "/about/about_work.webp",
+    text: "ciaoooasdfsaf sda asd d",
+  },
+  {
+    id: 13,
+    name: "Work",
+    image: "/about/about_work.webp",
+    text: "ciaooo sad fsda fsd fsd",
+  },
+  {
+    id: 14,
+    name: "Work",
+    image: "/about/about_work.webp",
+    text: "ciaooo sadf sad fsad f",
+  },
+  {
+    id: 15,
+    name: "Work",
+    image: "/about/about_work.webp",
+    text: "ciaooo sad fsda sd sad as",
+  },
+  {
+    id: 16,
+    name: "Work",
+    image: "/about/about_work.webp",
+    text: "ciaooo sda fsda ss ",
+  },
+];
