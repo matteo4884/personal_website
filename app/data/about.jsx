@@ -66,7 +66,7 @@ export const ABOUT = [
   },
   {
     id: 4,
-    name: "Hobbies",
+    name: "Passions",
     image: "/about/about_work.webp",
     text: (
       <div>
@@ -84,6 +84,9 @@ export const ABOUT = [
             <b>football</b>
           </li>
           <li>
+            <b>astronomy</b>
+          </li>
+          <li>
             <b>videogames</b>
           </li>
         </ul>
@@ -92,38 +95,98 @@ export const ABOUT = [
           love <b>food and cooking</b>, especially Italian cuisine. I like{" "}
           <b>football</b> and support AC Milan. When I have some free time, I
           occasionally play <b>video games</b>. P.S. I&apos;m really good at FC
+          :D
         </p>
       </div>
     ),
   },
   {
     id: 5,
-    name: "Passions",
+    name: "Aspirations",
     image: "/about/about_work.webp",
-    text: "ciaooofadsfasdfasdfasdf",
+    text: (
+      <div>
+        <p>
+          My aspiration isn&apos;t just to find a great job, but to leave a
+          lasting impact. I aim to contribute to <b>human progress</b>, making a
+          difference that goes beyond my individual achievements. This drive
+          fuels my <b>passion for innovation</b> and the pursuit of a brighter
+          future for humanity.
+        </p>
+      </div>
+    ),
   },
   {
     id: 6,
     name: "Inspirations",
     image: "/about/about_work.webp",
-    text: "ciaooo fsdasdfasdfsadf",
+    text: (
+      <div>
+        <p>
+          My main sources of inspiration boil down to two icons from different
+          worlds: <b>Elon Musk</b> and <b>Cristiano Ronaldo</b>. Musk, with his
+          eyes set on the stars and a heart beating for innovation, shows me
+          that <b>no dream is too big</b> if you&apos;re willing to work for it.
+          Ronaldo, on the other hand, embodies the spirit of{" "}
+          <b>never giving up</b>, proving time and again that hard work and
+          determination lead to unmatched success.
+          <br />
+          <br />
+          This is all I need, crazy right?
+        </p>
+      </div>
+    ),
   },
   {
     id: 7,
     name: "Travel",
     image: "/about/about_work.webp",
-    text: "ciaooo dsfsdfasdfasdfasd",
+    text: (
+      <div>
+        <p>
+          While my world usually orbits around technology, my travels are the{" "}
+          <b>perfect escape to disconnect</b>. Each journey is a perfetct
+          opportunity to recharge. Whether it&apos;s the tranquility of a{" "}
+          <b>forest</b>, the vastness of the <b>sea</b>, or the majestic view
+          from a <b>mountain</b> top, these moments away from screens and code
+          remind me of the <b>beautiful simplicity of the world</b>.
+        </p>
+      </div>
+    ),
   },
   {
     id: 8,
     name: "Growth",
     image: "/about/about_work.webp",
-    text: "ciaooo asdf sdfasdfsad",
+    text: (
+      <div>
+        <p>
+          My growth, particularly in problem-solving skills, has been profoundly
+          shaped by <b>programming</b>. It has taught me to view challenges
+          through a <b>new lens</b>, offering a structured yet creative approach
+          to tackling problems. This shift in perspective has not only enhanced
+          my technical abilities but also influenced my approach to{" "}
+          <b>obstacles in everyday life</b>.
+        </p>
+      </div>
+    ),
   },
   {
     id: 9,
     name: "Future",
     image: "/about/about_work.webp",
-    text: "ciaooo dsfsdaf sadf",
+    text: (
+      <div>
+        <p>
+          <i>
+            “ When the Stockton-Darlington Railway opened in 1825, people feared
+            the worst: the human body, surely, wasn&apos;t made to travel at
+            incredible speeds of 30 miles per hour. People genuinely believed
+            that going that quickly would kill you in gruesome ways, such as
+            your body melting. ”
+          </i>
+        </p>
+      </div>
+    ),
   },
 ];
