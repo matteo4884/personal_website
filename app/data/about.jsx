@@ -2,7 +2,7 @@ export const ABOUT = [
   {
     id: 1,
     name: "Identity",
-    image: "/about/about_whoami.webp",
+    image: "/about/identity.webp",
     text: (
       <div>
         <p>
@@ -35,17 +35,17 @@ export const ABOUT = [
   {
     id: 2,
     name: "Origins",
-    image: "/about/about_work.webp",
+    image: "/about/origins.webp",
     text: (
       <div>
         <p>
           My passion for computing wasn&apos;t sparked in a single moment;
           it&apos;s been a <b>constant throughout my life</b>. From my earliest
-          memories, I&apos;ve been drawn to technology, starting with video
-          games. This curiosity soon expanded to <b>hardware</b>, where I began
-          exploring the insides of computers. Gradually, my fascination led me
-          to the world of <b>coding</b>, where I started to unravel the magic
-          behind the machines.
+          memories, I&apos;ve been drawn to technology, starting with{" "}
+          <b>video games</b>. This curiosity soon expanded to <b>hardware</b>,
+          where I began exploring the insides of computers. Gradually, my
+          fascination led me to the world of <b>coding</b>, where I started to
+          unravel the magic behind the machines.
         </p>
       </div>
     ),
@@ -53,7 +53,7 @@ export const ABOUT = [
   {
     id: 3,
     name: "Philosophy",
-    image: "/about/about_work.webp",
+    image: "/about/philosophy.webp",
     text: (
       <div>
         <p>
@@ -67,24 +67,24 @@ export const ABOUT = [
   {
     id: 4,
     name: "Passions",
-    image: "/about/about_work.webp",
+    image: "/about/passions.webp",
     text: (
       <div>
         <ul className="list-disc pl-[18px] uppercase pb-[20px]">
           <li>
-            <b>coding</b>
-          </li>
-          <li>
-            <b>traveling</b>
+            <b>technology</b>
           </li>
           <li>
             <b>cooking</b>
           </li>
           <li>
-            <b>football</b>
+            <b>astronomy</b>
           </li>
           <li>
-            <b>astronomy</b>
+            <b>traveling</b>
+          </li>
+          <li>
+            <b>football</b>
           </li>
           <li>
             <b>videogames</b>
@@ -103,7 +103,7 @@ export const ABOUT = [
   {
     id: 5,
     name: "Aspirations",
-    image: "/about/about_work.webp",
+    image: "/about/aspirations.webp",
     text: (
       <div>
         <p>
@@ -119,7 +119,7 @@ export const ABOUT = [
   {
     id: 6,
     name: "Inspirations",
-    image: "/about/about_work.webp",
+    image: "/about/inspirations.webp",
     text: (
       <div>
         <p>
@@ -140,7 +140,7 @@ export const ABOUT = [
   {
     id: 7,
     name: "Travel",
-    image: "/about/about_work.webp",
+    image: "/about/travel.webp",
     text: (
       <div>
         <p>
@@ -157,7 +157,7 @@ export const ABOUT = [
   {
     id: 8,
     name: "Growth",
-    image: "/about/about_work.webp",
+    image: "/about/growth.webp",
     text: (
       <div>
         <p>
@@ -174,7 +174,7 @@ export const ABOUT = [
   {
     id: 9,
     name: "Future",
-    image: "/about/about_work.webp",
+    image: "/about/future.webp",
     text: (
       <div>
         <p>

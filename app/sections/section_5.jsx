@@ -51,7 +51,7 @@ function SectionAbout({ name, image, parag, setIsStopped }) {
     <>
       <div
         onClick={() => setIsOpen(!isOpen)}
-        className="group hover:grayscale-0 hover:opacity-100 z-40 transition-all mouse-hover flex justify-center items-center rounded-xl bg-no-repeat bg-cover bg-center grayscale opacity-50"
+        className={`group hover:grayscale-0 hover:opacity-100 z-40 transition-all mouse-hover flex justify-center items-center rounded-xl bg-no-repeat bg-cover bg-center grayscale opacity-50`}
         style={{ backgroundImage: `url(${image})` }}
       >
         <h4
