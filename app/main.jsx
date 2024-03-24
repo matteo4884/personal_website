@@ -260,7 +260,7 @@ export function Informations({ setIsStopped }) {
       <div className="flex flex-row-reverse justify-start items-end">
         <HiInformationCircle size={25} />
         <div className={`pr-2  ${isHover ? "block" : "hidden"}`}>
-          <p className="font-thin --font-m">
+          <p className="font-thin --font-s">
             This website uses no cookies
             <br />
             and collects no data.
