@@ -4,8 +4,6 @@ import { IoLogoJavascript } from "react-icons/io5";
 import { FaHtml5 } from "react-icons/fa";
 import { FaCss3Alt } from "react-icons/fa";
 import { FaGitAlt } from "react-icons/fa";
-import { FaUbuntu } from "react-icons/fa";
-import { SiKalilinux } from "react-icons/si";
 import { IoTerminal } from "react-icons/io5";
 import { DiCodeigniter } from "react-icons/di";
 import { TbBrandNextjs } from "react-icons/tb";
@@ -15,6 +13,8 @@ import { GrMysql } from "react-icons/gr";
 import { SiJquery } from "react-icons/si";
 import { SiPhpmyadmin } from "react-icons/si";
 import { SiNginx } from "react-icons/si";
+
+import Image from "next/image";
 
 const redHatDisplay = Red_Hat_Display({
   subsets: ["latin"],
@@ -42,104 +42,94 @@ function TopLeft() {
         id="skills"
       >
         <h1
-          style={{ fontSize: "clamp(200px, 5vw, 3000px)" }}
-          className={`${redHatDisplay.className} opacity-20 absolute -translate-y-[100%] top-0 left-0 w-full text-center mb-[10px] font-black leading-[0.75] z-[-1]`}
+          style={{ fontSize: "clamp(70px, 4.688vw, 120px)" }}
+          className={`${redHatDisplay.className} opacity-20 w-full text-center mb-[10px] font-black leading-[1.5] z-[-1]`}
         >
           My Skills
         </h1>
         <div className="flex gap-2 tablet:gap-4">
           <Skill
             name={"HTML"}
-            image={<FaHtml5 size={"clamp(25px, 2.604vw, 50px)"} color="#000" />}
+            image={<FaHtml5 size={"clamp(20px, 1.172vw, 30px)"} color="#000" />}
           />
           <Skill
             name={"CSS"}
             image={
-              <FaCss3Alt size={"clamp(25px, 2.604vw, 50px)"} color="#000" />
+              <FaCss3Alt size={"clamp(20px, 1.172vw, 30px)"} color="#000" />
             }
           />
           <Skill
             name={"JAVASCRIPT"}
             image={
               <IoLogoJavascript
-                size={"clamp(25px, 2.604vw, 50px)"}
+                size={"clamp(20px, 1.172vw, 30px)"}
                 color="#000"
               />
             }
           />
           <Skill
             name={"PHP"}
-            image={<SiPhp size={"clamp(25px, 2.604vw, 50px)"} color="#000" />}
-          />
-          <Skill
-            name={"GIT"}
-            image={
-              <FaGitAlt size={"clamp(25px, 2.604vw, 50px)"} color="#000" />
-            }
+            image={<SiPhp size={"clamp(20px, 1.172vw, 30px)"} color="#000" />}
           />
         </div>
         <div className="flex gap-2 tablet:gap-4 mt-[10px]">
           <Skill
-            name={"UBUNTU"}
+            name={"GIT"}
             image={
-              <FaUbuntu size={"clamp(25px, 2.604vw, 50px)"} color="#000" />
-            }
-          />
-          <Skill
-            name={"KALI LINUX"}
-            image={
-              <SiKalilinux size={"clamp(25px, 2.604vw, 50px)"} color="#000" />
+              <FaGitAlt size={"clamp(20px, 1.172vw, 30px)"} color="#000" />
             }
           />
           <Skill
             name={"TERMINAL"}
             image={
-              <IoTerminal size={"clamp(25px, 2.604vw, 50px)"} color="#000" />
+              <IoTerminal size={"clamp(20px, 1.172vw, 30px)"} color="#000" />
             }
           />
           <Skill
             name={"CODEIGNITER"}
             image={
-              <DiCodeigniter size={"clamp(25px, 2.604vw, 50px)"} color="#000" />
-            }
-          />
-          <Skill
-            name={"NEXT JS"}
-            image={
-              <TbBrandNextjs size={"clamp(25px, 2.604vw, 50px)"} color="#000" />
-            }
-          />
-          <Skill
-            name={"NODE JS"}
-            image={
-              <FaNodeJs size={"clamp(25px, 2.604vw, 50px)"} color="#000" />
+              <DiCodeigniter size={"clamp(20px, 1.172vw, 30px)"} color="#000" />
             }
           />
         </div>
         <div className="flex gap-2 tablet:gap-4 mt-[10px]">
           <Skill
+            name={"NEXT JS"}
+            image={
+              <TbBrandNextjs size={"clamp(20px, 1.172vw, 30px)"} color="#000" />
+            }
+          />
+          <Skill
+            name={"NODE JS"}
+            image={
+              <FaNodeJs size={"clamp(20px, 1.172vw, 30px)"} color="#000" />
+            }
+          />
+          <Skill
             name={"REACT"}
-            image={<FaReact size={"clamp(25px, 2.604vw, 50px)"} color="#000" />}
+            image={<FaReact size={"clamp(20px, 1.172vw, 30px)"} color="#000" />}
           />
           <Skill
             name={"MYSQL"}
-            image={<GrMysql size={"clamp(25px, 2.604vw, 50px)"} color="#000" />}
+            image={<GrMysql size={"clamp(20px, 1.172vw, 30px)"} color="#000" />}
           />
+        </div>
+        <div className="flex gap-2 tablet:gap-4 mt-[10px]">
           <Skill
             name={"JQUERY"}
             image={
-              <SiJquery size={"clamp(25px, 2.604vw, 50px)"} color="#000" />
+              <SiJquery size={"clamp(20px, 1.172vw, 30px)"} color="#000" />
             }
           />
           <Skill
             name={"PHPMYADMIN"}
             image={
-              <SiPhpmyadmin size={"clamp(25px, 2.604vw, 50px)"} color="#000" />
+              <SiPhpmyadmin size={"clamp(20px, 1.172vw, 30px)"} color="#000" />
             }
           />
           <Skill
             name={"NGINX"}
-            image={<SiNginx size={"clamp(25px, 2.604vw, 50px)"} color="#000" />}
+            image={<SiNginx size={"clamp(20px, 1.172vw, 30px)"} color="#000" />}
           />
         </div>
       </div>
@@ -156,8 +146,8 @@ function Skill({ name, image }) {
       >
         {image}
         <h1
-          className={`${redHatDisplay.className} -translate-x-[50%] translate-y-[100%] pointer-events-none opacity-0 group-hover:-translate-x-0 group-hover:opacity-100 transition-all duration-300 text-center absolute bottom-0 left-0 right-0 font-black leading-[0.75]`}
-          style={{ fontSize: "clamp(75px, 7vw, 3000px)" }}
+          className={`${redHatDisplay.className}  pointer-events-none opacity-0 group-hover:opacity-100 transition-all duration-300 text-center absolute -bottom-[10%] left-0 right-0 font-black leading-[1.5]`}
+          style={{ fontSize: "clamp(50px, 2.93vw, 75px)" }}
         >
           {name}
         </h1>
@@ -189,8 +179,44 @@ function BottomLeft() {
 function BottomRight() {
   return (
     <>
-      <div className="flex justify-center items-center">
-        <h1>bottom right</h1>
+      <div className="p-[3vw]">
+        <h1 className="text-center --font-l tablet:mb-0 mb-[50px]">
+          Operating System I use:
+        </h1>
+        <div className="grid h-full w-full tablet:grid-cols-3 grid-cols-none tablet:grid-rows-none grid-rows-3">
+          <div className="h-full w-full relative flex flex-col justify-center items-center --font-l tablet:py-0 py-[20px]">
+            <Image
+              src={"/os/ubuntu.png"}
+              alt="ubuntu"
+              width={100}
+              height={100}
+              style={{ width: "clamp(70px, 3.906vw, 100px)" }}
+            />
+            <h3 className={redHatDisplay.className + " mt-[20px]"}>UBUNTU</h3>
+          </div>
+          <div className="h-full w-full relative flex flex-col justify-center items-center --font-l tablet:py-0 py-[20px]">
+            <Image
+              src={"/os/windows.png"}
+              alt="windows"
+              width={100}
+              height={100}
+              style={{ width: "clamp(70px, 3.906vw, 100px)" }}
+            />
+            <h3 className={redHatDisplay.className + " mt-[20px]"}>WINDOWS</h3>
+          </div>
+          <div className="h-full w-full relative flex flex-col justify-center items-center --font-l tablet:py-0 py-[20px]">
+            <Image
+              src={"/os/kali_linux.png"}
+              alt="kali linux"
+              width={100}
+              height={100}
+              style={{ width: "clamp(70px, 3.906vw, 100px)" }}
+            />
+            <h3 className={redHatDisplay.className + " mt-[20px]"}>
+              KALI LINUX
+            </h3>
+          </div>
+        </div>
       </div>
     </>
   );

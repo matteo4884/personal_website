@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 
-export default function Header({ setIsStopped }) {
+export default function Header({ setIsStopped, rightClick }) {
   return (
     <>
       <div
@@ -13,6 +13,12 @@ export default function Header({ setIsStopped }) {
         }}
       >
         <Menu setIsStopped={setIsStopped} />
+        <div
+          style={{ padding: "clamp(5px, 5.014vw, 10px) 0px" }}
+          className="justify-center items-start tablet:flex hidden --font-s"
+        >
+          mode:&nbsp;<b>{rightClick ? "locked" : "exploration"}</b>
+        </div>
       </div>
     </>
   );

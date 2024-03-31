@@ -12,7 +12,7 @@ const redHatDisplay = Red_Hat_Display({
 
 export default function Section5({ setIsStopped }) {
   return (
-    <div className="w-full h-full relative p-12 grid grid-cols-3 grid-rows-3 gap-2">
+    <div className="tablet:w-full w-[100vw] h-full relative tablet:p-12 p-4 grid grid-cols-3 grid-rows-3 gap-2">
       <Text />
       {ABOUT.map((el) => {
         return (
@@ -37,7 +37,7 @@ function Text() {
     >
       <h2
         className="uppercase font-black leading-[0.75] tracking-tighter stroke_text opacity-[1] z-30"
-        style={{ fontSize: "clamp(150px, 13.021vw, 350px)" }}
+        style={{ fontSize: "clamp(100px, 13.021vw, 350px)" }}
       >
         Do you want to know more about me ?
       </h2>
@@ -51,7 +51,7 @@ function SectionAbout({ name, image, parag, setIsStopped }) {
     <>
       <div
         onClick={() => setIsOpen(!isOpen)}
-        className={`group hover:grayscale-0 hover:opacity-100 z-40 transition-all mouse-hover flex justify-center items-center rounded-xl bg-no-repeat bg-cover bg-center grayscale opacity-50`}
+        className={`group hover:grayscale-0 hover:opacity-100 z-40 hover:z-50 transition-all mouse-hover flex justify-center items-center rounded-xl bg-no-repeat bg-cover bg-center grayscale opacity-50`}
         style={{ backgroundImage: `url(${image})` }}
       >
         <h4

@@ -18,6 +18,15 @@ export default function Main() {
   const [rightClick, setRightClick] = useState(false);
 
   useEffect(() => {
+    function touchHandler(event) {
+      if (event.touches.length > 1) {
+        //the event is multi-touch
+        //you can then prevent the behavior
+        event.preventDefault();
+      }
+    }
+    window.addEventListener("touchstart", touchHandler, false);
+
     const handleResize = () => {
       if (window.innerWidth < window.innerHeight && window.innerWidth < 640) {
         setIsMobile(true);
@@ -93,6 +102,7 @@ export default function Main() {
       document
         .querySelector("body")
         .removeEventListener("mouseenter", handleMouseEnter);
+      window.removeEventListener("touchstart", touchHandler, false);
     };
   }, []);
 
@@ -173,7 +183,7 @@ export default function Main() {
 
   return (
     <>
-      <Header setIsStopped={setIsStopped} />
+      <Header setIsStopped={setIsStopped} rightClick={rightClick} />
       <MainContent setIsStopped={setIsStopped} />
       <BlurredBackground />
       <Guide setIsStopped={setIsStopped} />
@@ -185,7 +195,7 @@ export default function Main() {
 
 export function BlurredBackground() {
   return (
-    <>
+    <div className="tablet:block hidden">
       <div
         id="right_blur"
         className="fixed -right-[60px] top-0 h-screen w-[100px] bg-[#000000] blur-[20px] z-[100] pointer-events-none"
@@ -202,7 +212,7 @@ export function BlurredBackground() {
         id="bottom_blur"
         className="fixed -bottom-[60px] h-[100px] w-screen bg-[#000000] blur-[20px] z-[100] pointer-events-none"
       ></div>
-    </>
+    </div>
   );
 }
 
