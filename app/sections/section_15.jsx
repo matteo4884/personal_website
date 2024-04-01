@@ -180,39 +180,38 @@ function BottomRight() {
   return (
     <>
       <div className="p-[3vw]">
-        <h1 className="text-center --font-l tablet:mb-0 mb-[50px]">
-          Operating System I use:
-        </h1>
-        <div className="grid h-full w-full tablet:grid-cols-3 grid-cols-none tablet:grid-rows-none grid-rows-3">
-          <div className="h-full w-full relative flex flex-col justify-center items-center --font-l tablet:py-0 py-[20px]">
+        <h1 className="text-center --font-l tablet:mb-2 mb-[20px]">My os:</h1>
+        <div className="bg-[#33333383] rounded-lg overflow-hidden grid h-full w-full tablet:grid-cols-3 grid-cols-none tablet:grid-rows-none grid-rows-3">
+          <div className="relative h-full w-full flex flex-col justify-center items-center --font-l">
             <Image
-              src={"/os/ubuntu.png"}
+              src={"/os/ubuntu.jpg"}
               alt="ubuntu"
-              width={100}
-              height={100}
-              style={{ width: "clamp(70px, 3.906vw, 100px)" }}
+              fill
+              className="object-cover"
             />
-            <h3 className={redHatDisplay.className + " mt-[20px]"}>UBUNTU</h3>
+            <h3 className={redHatDisplay.className + " absolute bottom-2"}>
+              UBUNTU
+            </h3>
           </div>
-          <div className="h-full w-full relative flex flex-col justify-center items-center --font-l tablet:py-0 py-[20px]">
+          <div className="relative h-full w-full flex flex-col justify-center items-center --font-l tablet:py-0 py-[20px]">
             <Image
-              src={"/os/windows.png"}
+              src={"/os/windows.webp"}
               alt="windows"
-              width={100}
-              height={100}
-              style={{ width: "clamp(70px, 3.906vw, 100px)" }}
+              fill
+              className="object-cover"
             />
-            <h3 className={redHatDisplay.className + " mt-[20px]"}>WINDOWS</h3>
+            <h3 className={redHatDisplay.className + " absolute bottom-2"}>
+              WINDOWS
+            </h3>
           </div>
-          <div className="h-full w-full relative flex flex-col justify-center items-center --font-l tablet:py-0 py-[20px]">
+          <div className="relative h-full w-full flex flex-col justify-center items-center --font-l">
             <Image
-              src={"/os/kali_linux.png"}
+              src={"/os/kali_linux.webp"}
               alt="kali linux"
-              width={100}
-              height={100}
-              style={{ width: "clamp(70px, 3.906vw, 100px)" }}
+              fill
+              className="object-cover"
             />
-            <h3 className={redHatDisplay.className + " mt-[20px]"}>
+            <h3 className={redHatDisplay.className + " absolute bottom-2"}>
               KALI LINUX
             </h3>
           </div>

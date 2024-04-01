@@ -18,15 +18,6 @@ export default function Main() {
   const [rightClick, setRightClick] = useState(false);
 
   useEffect(() => {
-    function touchHandler(event) {
-      if (event.touches.length > 1) {
-        //the event is multi-touch
-        //you can then prevent the behavior
-        event.preventDefault();
-      }
-    }
-    window.addEventListener("touchstart", touchHandler, false);
-
     const handleResize = () => {
       if (window.innerWidth < window.innerHeight && window.innerWidth < 640) {
         setIsMobile(true);
@@ -102,7 +93,6 @@ export default function Main() {
       document
         .querySelector("body")
         .removeEventListener("mouseenter", handleMouseEnter);
-      window.removeEventListener("touchstart", touchHandler, false);
     };
   }, []);
 
