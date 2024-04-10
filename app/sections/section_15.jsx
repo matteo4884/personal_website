@@ -180,13 +180,16 @@ function BottomRight() {
   return (
     <>
       <div className="p-[3vw]">
-        <h1 className="text-center --font-l tablet:mb-2 mb-[20px]">My os:</h1>
+        <h1 className="text-center --font-l tablet:mb-2 mb-[20px]">
+          Operating system I use:
+        </h1>
         <div className="bg-[#33333383] rounded-lg overflow-hidden grid h-full w-full tablet:grid-cols-3 grid-cols-none tablet:grid-rows-none grid-rows-3">
           <div className="relative h-full w-full flex flex-col justify-center items-center --font-l">
             <Image
               src={"/os/ubuntu.jpg"}
               alt="ubuntu"
               fill
+              sizes="100%"
               className="object-cover"
             />
             <h3 className={redHatDisplay.className + " absolute bottom-2"}>
@@ -198,6 +201,7 @@ function BottomRight() {
               src={"/os/windows.webp"}
               alt="windows"
               fill
+              sizes="100%"
               className="object-cover"
             />
             <h3 className={redHatDisplay.className + " absolute bottom-2"}>
@@ -209,6 +213,7 @@ function BottomRight() {
               src={"/os/kali_linux.webp"}
               alt="kali linux"
               fill
+              sizes="100%"
               className="object-cover"
             />
             <h3 className={redHatDisplay.className + " absolute bottom-2"}>
