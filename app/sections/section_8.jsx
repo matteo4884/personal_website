@@ -2,6 +2,13 @@
 
 import { useEffect, useState } from "react";
 import { TypeAnimation } from "react-type-animation";
+import { Red_Hat_Display } from "next/font/google";
+import { FaArrowUp } from "react-icons/fa";
+
+const redHatDisplay = Red_Hat_Display({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+});
 
 export default function Section8() {
   const [position, setPosition] = useState({
@@ -13,12 +20,19 @@ export default function Section8() {
     <>
       <div className="h-full w-full flex justify-center items-center relative">
         <a
-          className="flex transition-all justify-center items-center rounded-3xl cursor-pointer"
+          className="flex flex-col transition-all justify-center items-center rounded-3xl cursor-pointer"
           onPointerMove={(e) => {
             setPosition({ x: e.clientX, y: e.clientY });
           }}
           onMouseOver={() => setIsHover(true)}
           onMouseLeave={() => setIsHover(false)}
+          onClick={() =>
+            document.getElementById("about").scrollIntoView({
+              behavior: "smooth",
+              block: "center",
+              inline: "center",
+            })
+          }
         >
           <video
             width="1200"
@@ -35,7 +49,19 @@ export default function Section8() {
             Your browser does not support the video tag.
           </video>
           <div
-            className={`fixed left-0 top-8 pointer-events-none ${
+            className={
+              redHatDisplay.className +
+              " font-black uppercase --font-m w-full flex flex-col justify-center mt-8 tablet:hidden "
+            }
+          >
+            <FaArrowUp className="w-full text-center mb-4 flex justify-center" />
+            <div className="text-center">This is one of my hobb!es.</div>
+            <div className="text-center">
+              <DynamicText />
+            </div>
+          </div>
+          <div
+            className={`fixed left-0 top-8 pointer-events-none tablet:block hidden ${
               isHover ? "opacity-1 left-8" : "opacity-0 left-32"
             }`}
             style={{
@@ -44,25 +70,39 @@ export default function Section8() {
             }}
           >
             <h4 className="--font-m p-4 bg-black">
-              <TypeAnimation
-                sequence={[
-                  // Same substring at the start will only be typed once, initially
-                  "Click to read philosophy",
-                  1000,
-                  "Click to read identity",
-                  1000,
-                  "Click to read future",
-                  1000,
-                  "Click to read idea",
-                  1000,
-                ]}
-                speed={50}
-                repeat={Infinity}
-              />
+              This is one of my hobbies.
+              <br />
+              <DynamicText />
             </h4>
           </div>
         </a>
       </div>
     </>
+  );
+}
+
+export function DynamicText() {
+  return (
+    <TypeAnimation
+      sequence={[
+        // Same substring at the start will only be typed once, initially
+        "Click to read identity",
+        1000,
+        "Click to read origins",
+        1000,
+        "Click to read philosophy",
+        1000,
+        "Click to read passions",
+        1000,
+        "Click to read aspirations",
+        1000,
+        "Click to read inspirations",
+        1000,
+        "Click to read my ideology",
+        1000,
+      ]}
+      speed={50}
+      repeat={Infinity}
+    />
   );
 }

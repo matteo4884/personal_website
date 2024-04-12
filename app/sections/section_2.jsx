@@ -1,7 +1,10 @@
 export default function Section2() {
   return (
     <>
-      <h1 className="single_section">2</h1>
+      <div className="w-full h-full flex">
+        <div className="w-[50%]"></div>
+        <div className="w-[50%]"></div>
+      </div>
     </>
   );
 }

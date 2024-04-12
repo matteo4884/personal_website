@@ -146,7 +146,7 @@ function Skill({ name, image }) {
       >
         {image}
         <h1
-          className={`${redHatDisplay.className}  pointer-events-none opacity-0 group-hover:opacity-100 transition-all duration-300 text-center absolute -bottom-[10%] left-0 right-0 font-black leading-[1.5]`}
+          className={`${redHatDisplay.className}  pointer-events-none opacity-0 group-hover:opacity-100 transition-all duration-300 text-center absolute tablet:-bottom-[10%] -bottom-[15%] left-0 right-0 font-black leading-[1.5]`}
           style={{ fontSize: "clamp(50px, 2.93vw, 75px)" }}
         >
           {name}

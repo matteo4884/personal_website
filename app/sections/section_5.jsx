@@ -55,7 +55,7 @@ function SectionAbout({ name, image, parag, setIsStopped }) {
         style={{ backgroundImage: `url(${image})` }}
       >
         <h4
-          className={`${redHatDisplay.className} uppercase transition-all opacity-0 group-hover:opacity-100 font-black bg-[#ddd] --font-xl tablet:--font-xxl text-[#000]`}
+          className={`${redHatDisplay.className} px-4 py-2 supported-backdrop-filter uppercase transition-all opacity-0 group-hover:opacity-100 font-black bg-[#ddd8] --font-xl tablet:--font-xxl text-[#000]`}
         >
           {name}
         </h4>
