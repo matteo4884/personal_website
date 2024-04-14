@@ -1,12 +1,31 @@
 import { useState, useEffect } from "react";
+import { Allura, Red_Hat_Display } from "next/font/google";
+
+const allura = Allura({ subsets: ["latin"], weight: "400" });
+const redHatDisplay = Red_Hat_Display({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+});
 
 export default function Section18() {
   return (
-    <>
-      <h1 className="--font-xxl">
+    <div className="relative">
+      <div
+        className={
+          allura.className +
+          " text-red-600 absolute -translate-y-[75%] z-[-1] opacity-50"
+        }
+        style={{ fontSize: "clamp(200px, 11.719vw, 300px)" }}
+      >
+        yof :)
+      </div>
+      <h1 className={redHatDisplay.className + ` font-black --font-xxl`}>
         <YearsOfExperience />
       </h1>
-    </>
+      <div className="mt-4">
+        what&apos;s this? I guess we&apos;ll never know
+      </div>
+    </div>
   );
 }
 
@@ -22,10 +41,10 @@ export function YearsOfExperience() {
       setExperience(
         parseFloat((t2 - t1) / (24 * 3600 * 1000) / 365).toFixed(9)
       );
-    }, 50);
+    }, 100);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [experience]);
 
   return <span>{experience}</span>;
 }
