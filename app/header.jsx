@@ -68,6 +68,19 @@ export function Menu({ setIsStopped }) {
               <li className="line-through cursor-pointer hover:no-underline">
                 <a
                   onClick={() =>
+                    document.getElementById("journey").scrollIntoView({
+                      behavior: "smooth",
+                      block: "center",
+                      inline: "center",
+                    })
+                  }
+                >
+                  Journey
+                </a>
+              </li>
+              <li className="line-through cursor-pointer hover:no-underline">
+                <a
+                  onClick={() =>
                     document.getElementById("skills").scrollIntoView({
                       behavior: "smooth",
                       block: "center",

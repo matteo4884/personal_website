@@ -14,6 +14,7 @@ import { SiJquery } from "react-icons/si";
 import { SiPhpmyadmin } from "react-icons/si";
 import { SiNginx } from "react-icons/si";
 
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 const redHatDisplay = Red_Hat_Display({
@@ -159,8 +160,19 @@ function Skill({ name, image }) {
 function TopRight() {
   return (
     <>
-      <div className="flex justify-center items-center">
-        <h1>top right</h1>
+      <div className="relative flex justify-center items-center">
+        <motion.div
+          className="absolute top-[25%] right-[25%]"
+          animate={{ y: [0, 10, 0], rotate: [5, -5, 5] }}
+          transition={{
+            duration: 5,
+            ease: "easeInOut",
+            repeat: Infinity,
+            times: [0, 0.5, 1],
+          }}
+        >
+          <Image src={"/atom.svg"} alt="atom" width={100} height={100}></Image>
+        </motion.div>
       </div>
     </>
   );
@@ -169,9 +181,7 @@ function TopRight() {
 function BottomLeft() {
   return (
     <>
-      <div className="flex justify-center items-center">
-        <h1>bottom left</h1>
-      </div>
+      <div className="flex justify-center items-center"></div>
     </>
   );
 }
